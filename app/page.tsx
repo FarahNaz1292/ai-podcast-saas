@@ -1,9 +1,20 @@
+import FeautureSection from "@/components/home/FeaturesSection";
+import Footer from "@/components/home/Footer";
+import Header from "@/components/home/Header";
+import HeroSection from "@/components/home/HeroSection";
+import PricingSection from "@/components/home/PricingSection";
 
 
 export default function Home() {
   return (
-   <div>
-    <h1 className="font-bold flex justify-center items-center p-4">Welcome to the Home Page</h1>
-   </div>
+   <>
+     <Header />
+     <HeroSection/>
+     <FeautureSection/>
+     <PricingSection/>
+    {/* <CtaSection/> */}
+    <Footer/>
+
+   </>
   );
 }
