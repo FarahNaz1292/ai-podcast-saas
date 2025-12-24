@@ -1,8 +1,9 @@
-import FeautureSection from "@/components/home/FeaturesSection";
-import Footer from "@/components/home/Footer";
-import Header from "@/components/home/Header";
-import HeroSection from "@/components/home/HeroSection";
-import PricingSection from "@/components/home/PricingSection";
+import { CtaSection } from "@/components/home/CtaSection";
+import { FeaturesSection } from "@/components/home/FeaturesSection";
+import {Footer} from "@/components/home/Footer";
+import { Header } from "@/components/home/Header";
+import {HeroSection} from "@/components/home/HeroSection";
+import {PricingSection} from "@/components/home/PricingSection";
 
 
 export default function Home() {
@@ -10,9 +11,9 @@ export default function Home() {
    <>
      <Header />
      <HeroSection/>
-     <FeautureSection/>
+     <FeaturesSection/>
      <PricingSection/>
-    {/* <CtaSection/> */}
+    <CtaSection/>
     <Footer/>
 
    </>
