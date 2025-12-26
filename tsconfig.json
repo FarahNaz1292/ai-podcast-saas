@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "inngest/steps/ai-generation"  ],
   "exclude": ["node_modules"]
 }

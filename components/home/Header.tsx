@@ -4,7 +4,7 @@ import { SignInButton, UserButton, useAuth, Protect } from "@clerk/nextjs";
 import { Home, Sparkles, Zap, Crown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { DashboardNav } from "@/components/ui/dashboardnav";
+import { DashboardNav } from "@/components/dashboardnav";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
