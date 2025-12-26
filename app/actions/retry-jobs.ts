@@ -46,6 +46,10 @@ export async function retryJob(projectId: Id<"projects">, job: RetryableJob) {
     throw new Error("Project not found");
   }
 
+  if (project.userId !== userId) {
+    throw new Error("Unauthorized: You don't have access to this project");
+  }
+
   // Infer original plan from what features were generated
   let originalPlan: "free" | "pro" | "ultra" = "free";
   if (project.keyMoments || project.youtubeTimestamps) {

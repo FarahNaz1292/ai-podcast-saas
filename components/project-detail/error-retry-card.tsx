@@ -29,7 +29,7 @@ export function ErrorRetryCard({
       await retryJob(projectId, job);
       toast.success(`Retry started for ${job}`, { id: `retry-${job}` });
     } catch (error) {
-      toast.error(`Failed to retry: ${error}`, { id: `retry-${job}` });
+      toast.error(`Failed to retry: ${error instanceof Error ? error.message : String(error)}`, { id: `retry-${job}` });
       setIsRetrying(false);
     }
   };

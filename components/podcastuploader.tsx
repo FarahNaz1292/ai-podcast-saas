@@ -91,7 +91,11 @@ export function PodcastUploader() {
    * 4. Redirect to project detail page
    */
   const handleUpload = async () => {
-    if (!selectedFile || !userId) {
+    if (!userId) {
+      toast.error("Please sign in to upload files");
+      return;
+    }
+    if (!selectedFile) {
       toast.error("Please select a file to upload");
       return;
     }

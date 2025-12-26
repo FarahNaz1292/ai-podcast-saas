@@ -15,7 +15,9 @@ export function estimateAssemblyAITime(durationSeconds?: number) {
   return {
     bestCase: Math.max(30, bestCaseSeconds),
     conservative: Math.max(60, conservativeSeconds),
-    average: Math.round((bestCaseSeconds + conservativeSeconds) / 2),
+    average: Math.round(
+      (Math.max(30, bestCaseSeconds) + Math.max(60, conservativeSeconds)) / 2,
+    ),
   };
 }
 
@@ -23,9 +25,16 @@ export function estimateAssemblyAITime(durationSeconds?: number) {
  * Format seconds into a human-readable time estimate
  */
 export function formatTimeEstimate(seconds: number): string {
-  if (seconds < 60) return `${Math.ceil(seconds)} seconds`;
-  if (seconds < 3600) return `${Math.ceil(seconds / 60)} minutes`;
-  return `${Math.ceil(seconds / 3600)} hours`;
+  const ceiledSeconds = Math.ceil(seconds);
+  if (seconds < 60) {
+    return `${ceiledSeconds} second${ceiledSeconds === 1 ? '' : 's'}`;
+  }
+  const minutes = Math.ceil(seconds / 60);
+  if (seconds < 3600) {
+    return `${minutes} minute${minutes === 1 ? '' : 's'}`;
+  }
+  const hours = Math.ceil(seconds / 3600);
+  return `${hours} hour${hours === 1 ? '' : 's'}`;
 }
 
 /**
